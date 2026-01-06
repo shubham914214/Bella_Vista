@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bella Vista</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yuji+Boku&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: white;
+        text-decoration: none;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .h-font {
+        font-family: "Poppins", sans-serif;
+      }
+      .navbar {
+        /* border: 2px solid red; */
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(7, 7, 7);
+        color: white;
+        position: sticky;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 1;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* border: 2px solid black; */
+        width: 90%;
+      }
+      .left {
+        display: flex;
+        flex-direction: column;
+      }
+      .left a {
+        text-decoration: none;
+        font-size: 40px;
+      }
+
+      .right ul {
+        display: flex;
+      }
+      .right ul li {
+        list-style: none;
+        padding: 10px 15px 10px 15px;
+      }
+      .right li a {
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      /* Hero section */
+
+      .hero-section {
+        height: 655px;
+        width: 100%;
+        position: relative;
+      }
+      .hero-section img {
+        width: 100%;
+        height: 655px;
+        opacity: 1.1;
+        display: block;
+      }
+      .hero-content {
+        height: 655px;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px 0px 40px 0px;
+      }
+
+      .buttons {
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 30%;
+        cursor: pointer;
+      }
+      .left-btn {
+        border: 2px solid salmon;
+        padding: 8px 19px 8px 19px;
+        background-color: salmon;
+        border-radius: 5px;
+        cursor: pointer;
+        /* transition: background 0.5s ease, transform 0.5s ease; */
+      }
+
+      .left-btn:hover {
+        background-color: rgb(229, 94, 79);
+        transition: background 0.5s ease, transform 0.5s ease;
+      }
+      .right-btn {
+        border: 2px solid rgb(255, 255, 255);
+        padding: 8px 19px 8px 19px;
+        border-radius: 5px;
+        margin-top: 14px;
+      }
+      .right-btn:hover {
+        background-color: rgba(0, 0, 0, 0.179);
+        transition: background 0.5s ease, transform 0.5s ease;
+      }
+
+      /* About section */
+      .Our-menu {
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: #000000; */
+        background-color: #383a41;
+        padding: 30px 0px 85px 0px;
+      }
+      .our-heading {
+        background-color: gold;
+        width: 10%;
+        height: 2px;
+        margin-bottom: 10px;
+      }
+
+      .menu {
+        width: 90%;
+        /* border: 2px solid black; */
+      }
+      .menu-heading {
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 90px;
+      }
+
+      .h-menus {
+        /* border-bottom: 2px solid gold; */
+        padding-bottom: 5px;
+      }
+      .menu-content {
+        border-bottom: 2px solid gold;
+        width: 80%;
+        margin-bottom: 60px;
+      }
+      .item-content {
+        /* border: 2px solid white; */
+        background-color: rgb(76, 75, 75);
+        width: 80%;
+        padding: 15px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.15),
+          0 35px 64px rgba(0, 0, 0, 0.15);
+      }
+      .content-dtl {
+        /* border: 2px solid red; */
+        /* width: 50%; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      summary {
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .price {
+        font-size: 20px;
+        color: gold;
+        cursor: pointer;
+      }
+
+      /* About section */
+      .about-content {
+        display: flex;
+        justify-content: space-around;
+      }
+      .left-about {
+        /* border: 2px solid red; */
+        width: 45%;
+        padding: 10px;
+      }
+      .right-about {
+        /* border: 2px solid red; */
+        width: 45%;
+        padding: 10px;
+      }
+      .right-about img {
+        width: 100%;
+        border-radius: 18px;
+      }
+
+      /* Get in touch*/
+
+      .bdr {
+        width: 10%;
+        background-color: gold;
+        height: 2px;
+      }
+
+      .contact-box {
+        /* border: 2px solid gold; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contact {
+        /* border: 2px solid white; */
+        width: 50%;
+        padding: 70px 10px 70px 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.15),
+          0 35px 64px rgba(0, 0, 0, 0.15);
+        background-color: #383a41;
+      }
+      .cont-itm {
+        /* border: 2px solid white; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contact-us {
+        display: flex;
+        flex-direction: column;
+      }
+      .contact-us label {
+        font-size: 18px;
+        /* font-family: "Yuji Boku", serif; */
+        font-family: "Poppins", sans-serif;
+      }
+
+      .input-group {
+        margin-bottom: 14px;
+      }
+
+      .input-group label {
+        font-size: 14px;
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .input-group input,
+      .input-group textarea {
+        width: 370px;
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+        color: black;
+      }
+
+      .input-group input:focus,
+      .input-group textarea:focus {
+        border-color: gold;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        background: salmon;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      button:hover {
+        opacity: 0.9;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: rgb(0, 0, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Hamburger icon */
+      .hamburger {
+        width: 28px;
+        height: 24px;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        height: 3px;
+        width: 100%;
+        background: white;
+        border-radius: 3px;
+        transition: 0.3s ease;
+      }
+
+      /* Default menu animation */
+      .right {
+        transition: all 0.4s ease;
+      }
+
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+
+        .right {
+          position: absolute;
+          top: 60px;
+          right: 0;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.95);
+          transform: translateY(-120%);
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .right ul {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .right ul li {
+          padding: 12px 0;
+        }
+
+        /* When menu is open */
+        .right.active {
+          transform: translateY(0);
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+
+      .hero-content,
+      .item-content,
+      .contact,
+      .left-about,
+      .right-about {
+        transition: all 0.45s ease;
+      }
+
+      .item-content:hover {
+        transform: translateY(-4px);
+      }
+
+      @media (max-width: 480px) {
+        .input-group input,
+        .input-group textarea {
+          width: 100%;
+        }
+        .contact {
+          width: 120%;
+        }
+        .about-content {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+        .left-about {
+          width: 100%;
+        }
+        .right-about {
+          width: 100%;
+        }
+        .menu-heading {
+          padding-bottom: 26px;
+        }
+        .bdr {
+          width: 50%;
+        }
+        .our-heading {
+          width: 30%;
+        }
+        .content {
+          padding: 20px;
+          text-align: center;
+        }
+        .buttons {
+          flex-direction: column;
+        }
+        .left-btn {
+          width: 135px;
+          padding: 8px 19px 8px 19px;
+          margin-bottom: 15px;
+        }
+        .right-btn {
+          padding: 8px 19px 8px 19px;
+          width: 135px;
+        }
+        .right {
+          margin-top: 15px;
+        }
+        #more-burgers {
+          padding-top: 12px;
+          display: flex;
+          flex-direction: column;
+        }
+        .input-group input {
+          width: 300px;
+          font-size: 18px;
+        }
+        .Our-menu {
+          padding-bottom: 18px;
+        }
+        .menu-content {
+          margin-bottom: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="nav">
+        <!-- For left section (Logo) -->
+        <div class="left">
+          <a href="/">Bella Vista</a>
+          <span>Authetic Indian Cuisine</span>
+        </div>
+
+        <!-- For right section (Content/ links) -->
+        <div class="right">
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="/#menu">Menu</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Hameburgure -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <!-- Hero section -->
+    <div class="hero-section">
+      <!-- <img src="https://cdn.pixabay.com/photo/2016/02/10/13/39/hotel-1191725_1280.jpg" alt="" /> -->
+      <img
+        src="https://cdn.pixabay.com/photo/2015/02/24/11/54/vienna-647328_1280.jpg"
+        alt=""
+      />
+      <div class="hero-content">
+        <div class="content">
+          <h1>Welcome to Bella Vista</h1>
+          <p>Experience the authrantic tese of india in the nearest City.</p>
+        </div>
+
+        <div class="buttons">
+          <div class="left-btn">View Menu</div>
+          <div class="right-btn">Make Reservation</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu section -->
+
+    <div class="Our-menu" id="#menu">
+      <div class="menu">
+        <div class="menu-heading">
+          <h1>Our Menu</h1>
+          <div class="our-heading"></div>
+
+          <p>Discover our carefully crafted dished!</p>
+        </div>
+        <div class="menu-content">
+          <h1 class="h-menus">Appetizers</h1>
+        </div>
+
+        <!-- Burgers -->
+        <div class="item-content">
+          <div class="content-dtl">
+            <details style="padding-bottom: 10px">
+              <summary>Burgers</summary>
+              <p id="more-burgers" style="padding-top: 12px">
+                Our juicy handcrafted burgers feature fresh ingredients, toasted
+                buns, melted cheese, and bold flavors, delivering a satisfying
+                bite every time.
+                <a href="/pages/burgers.html" class="right-btn">More >>></a>
+              </p>
+            </details>
+            <p class="price">44$</p>
+          </div>
+        </div>
+
+        <!-- Margherita Pizza -->
+
+        <div class="item-content">
+          <div class="content-dtl">
+            <details style="padding-bottom: 10px">
+              <summary>Margherita Pizza</summary>
+              <p id="more-burgers" style="padding-top: 12px">
+                Thin crust pizza topped with ripe tomatoes, creamy mozzarella,
+                fragrant basil, and olive oil, baked until golden, simple
+                Italian comfort.
+                <a href="/pages/burgers.html" class="right-btn">More >>></a>
+              </p>
+            </details>
+            <p class="price">60$</p>
+          </div>
+        </div>
+
+        <!-- Pasta Alfredo -->
+
+        <div class="item-content">
+          <div class="content-dtl">
+            <details style="padding-bottom: 10px">
+              <summary>Pasta Alfredo</summary>
+              <p id="more-burgers" style="padding-top: 12px">
+                Silky fettuccine tossed in rich Alfredo sauce made with butter,
+                cream, and parmesan, comforting, creamy, and perfectly balanced
+                for dinner.
+                <a href="/pages/burgers.html" class="right-btn">More >>></a>
+              </p>
+            </details>
+            <p class="price">34$</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Bella Vista -->
+
+    <div class="Our-menu">
+      <div class="menu">
+        <div class="menu-heading">
+          <h1>About Bella Vista</h1>
+          <div class="bdr"></div>
+        </div>
+
+        <div class="about-content">
+          <div class="left-about">
+            <h1 class="menu-content" style="padding-bottom: 15px">Our Story</h1>
+            <p class="h-font" style="font-size: 18px; text-align: justify">
+              <!-- Bella Vista Restaurant brings together fresh ingredients, handcrafted recipes, and warm hospitality to create memorable dining experiences. What began as a small kitchen is now a beloved community spot where families celebrate, friends gather, and guests return for authentic flavors, cozy ambiance, and heartfelt service — a true taste of home in every bite. -->
+               Bella Vista Restaurant was created with a simple vision serve honest food with genuine warmth. Our chefs craft every dish using fresh, locally sourced ingredients and recipes inspired by tradition and creativity. Today, Bella Vista is a community favorite — a welcoming place to relax, celebrate, and enjoy flavors that feel like home. With sustainability, quality, and hospitality at our core, we continue to grow while staying true to what matters most: unforgettable meals and meaningful moments.
+          </div>
+
+          <div class="right-about">
+            <img
+              src="https://cdn.pixabay.com/photo/2014/07/15/13/36/coffee-shop-393954_1280.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="Our-menu">
+      <div class="menu">
+        <div class="menu-heading">
+          <h1>Get In Touch</h1>
+
+          <div class="bdr"></div>
+        </div>
+        <div class="contact-box">
+          <div class="contact">
+            <div class="cont-itm">
+              <form class="contact-form" action="">
+                <div class="input-group">
+                  <label for="firstName">Name:</label>
+                  <input
+                    name="firstName"
+                    id="firstName"
+                    type="text"
+                    placeholder="Enter Your Name..."
+                    required
+                  />
+                </div>
+
+                <div class="input-group">
+                  <label for="youremail">Email:</label>
+                  <input
+                    type="email"
+                    id="youremail"
+                    placeholder="Enter your email..."
+                  />
+                </div>
+
+                <div class="input-group">
+                  <label for="message">Message</label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows="4"
+                    placeholder="Write your message..."
+                  ></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-content">
+        <p>© 2026, Bella Vista. All rights reserved.</p>
+      </div>
+    </div>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".right");
+
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        hamburger.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>
